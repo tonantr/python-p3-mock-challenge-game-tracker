@@ -24,12 +24,10 @@ class Game:
 
     def average_score(self, player):
         scores = 0
-        count = 0
         for result in self.results():
             if result.player == player:
                 scores += result.score
-                count += 1
-        return scores / count
+        return scores / len(self.results())
         
 
 class Player:
