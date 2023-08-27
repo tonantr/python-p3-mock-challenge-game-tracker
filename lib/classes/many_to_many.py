@@ -20,7 +20,7 @@ class Game:
         return [result for result in Result.all if result.game == self]
 
     def players(self):
-        return list(set([result.player for result in self.results()]))
+        return list(set(result.player for result in self.results()))
 
     def average_score(self, player):
         scores = 0
@@ -54,7 +54,7 @@ class Player:
         return [result for result in Result.all if result.player == self]
 
     def games_played(self):
-        return list(set([result.game for result in self.results()]))
+        return list(set(result.game for result in self.results()))
 
     def played_game(self, game):
         for result in self.results():
